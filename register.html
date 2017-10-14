@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>注册</title>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/sweetalert2.min.js"></script>
+	<link rel="stylesheet" href="iconfont/iconfont.css">
+	<link rel="shortcut icon" href="imgs/favicon.ico">
+	<link rel="stylesheet" href="css/sweetalert2.min.css">
+</head>
+<style>
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	body{
+		/* overflow: hidden;  */
+		background:#fedc71 url(imgs/login_background.jpg) no-repeat;
+		background-size: 100% 100%;
+		/* background-size: cover; */
+	}
+	html{
+		min-width: 1500px;
+
+	}
+
+	/* 表格 */
+	.register{
+		width: 420px;
+		height: 460px;
+		border-top: 2px solid red;
+		margin-top:2%;
+		margin-left: 650px;
+		background: #fff;
+		box-shadow: 5px  5px 5px 1px #666;
+		/* box-shadow:5px 5px 1px #666; */
+		position: relative;
+	}
+	.register input{
+		outline: none;
+	}
+	.register div{
+		border: 1px solid #ddd;
+		width: 370px;
+		height: 40px;
+		margin:10px auto;
+		border-radius: 5px;
+		font-size: 0;
+	}
+	.register div label{
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+		background: #f2dede;
+		border-radius: 5px 0 0 5px;
+	}
+	.register div input{
+		display: inline-block;
+		width:316px;
+		height: 35px;
+		border:none;
+		background: #fff;
+		font-size: 14px;
+		text-indent: 16px;
+	}
+	/* 用户注册 */
+	.register .user{
+		border:none;
+		border-radius: 0;
+		height: 20px;
+		box-sizing: border-box;
+		border-left: 2px solid red; 
+		padding-left: 12px;
+		font-size: 15px;
+		margin: 18px auto;
+	}
+	/* i的颜色 */
+	.register .phone label i{
+		color:#a94442;
+		font-size: 20px;
+	}
+	/* 账号 */
+	.register .checktel {
+		width: 270px;
+		margin-left: 24px;
+	}
+	.register .checktel input{
+		width: 220px;
+	}
+	.register .checktel label i{
+		color:#a94442;
+		font-size: 20px;
+	}
+	.register .checktel-right{
+		/* border: 1px solid #000; */
+		border-radius: 5px;
+		width: 90px;
+		height: 37px;
+		font-size: 14px;
+		line-height: 35px;
+		text-indent: 14px;
+		position: absolute;
+		top:131px;
+		left:308px;
+		/*background-color: #ec868c;	*/
+		background:url(imgs/yanzhengma.png);
+	}
+	/* 密码 */
+	.register .paswd label i{
+		color:#a94442;
+		font-size: 20px;
+	}
+	/* 确认密码 */
+	.register .rpaswd label i{
+		color:#a94442;
+		font-size: 20px;
+	}
+	.register .tips{
+		width: 300px;
+		height: 18px;	
+		font-size: 14px;
+		margin-left: 22px;
+		margin-top: -8px;
+		margin-left: 24px;
+		color: #b36b65;
+	}
+	.conform .sub{
+		background-color: #e2454e;
+		width: 100%;
+		height: 100%;
+		color: white;
+	}
+	.register .sube{
+		width: 370px;
+		height: 30px;
+		border:none;
+		/* border: 1px solid #000; */
+		font-size: 9px;
+		display: flex;
+		margin-top: 5px;
+	}
+	.register .sube .one1{
+		display:inline-block;
+		/* border: 1px solid #000; */
+		width: 50px;
+		height: 30px;
+		box-sizing:border-box;
+		font-size:11px;
+		vertical-align: middle;
+		line-height: 30px;
+		flex:1;
+		color: #4292cf;
+		text-align: center;
+	}
+	.register .sube .one2{
+		display:inline-block;
+	/* 	border: 1px solid #000; */
+		width: 50px;
+		height: 30px;
+		box-sizing:border-box;
+		font-size:11px;
+		vertical-align: middle;
+		line-height: 30px;
+		flex:1.5;
+		color: #4292cf;
+		text-align: center;
+	}
+	.register .sube .one2 a{
+		text-decoration:none;
+	}
+	.register .sube .one3{
+		display:inline-block;
+		/* border: 1px solid #000; */
+		width: 50px;
+		height: 30px;
+		box-sizing:border-box;
+		font-size: 11px;
+		vertical-align: middle;
+		line-height: 30px;
+		flex:1.5;
+		color: #4292cf;
+		text-align: center;
+	}
+	.register .sube .one4{
+		display:inline-block;
+	/* 	border: 1px solid #000; */
+		width: 50px;
+		height: 30px;
+		box-sizing:border-box;
+		font-size: 11px;
+		vertical-align: middle;
+		line-height: 30px;
+		flex:3;
+		color: #4292cf;
+		text-align: center;
+	}
+	.pict{
+		width: 100px;
+		height: 130px;
+	}
+</style>
+<body>
+	<div class="pict">
+		<img src="imgs/nav-logo.png">
+	</div>
+	<div class="register">
+		<!-- 用户注册 -->
+		<div class="user"><b>用户注册</b></div>
+		<!-- 电话 -->
+		<div class="phone">
+			<label><i class="icon iconfont icon-shouji"></i></label>
+			<input id="phone" type="text" placeholder="请输入账号">
+		</div>
+		<p class="tips tips1" id="phone-msg"><!-- 手机号为必填项 --></p>
+
+		<!-- 验证码 -->
+		<div class="checktel">
+			<label> <i class="icon iconfont icon-erweima"></i></label>
+			<input id="yzm" type="text" placeholder="请输入验证码">
+		</div>
+		<p class="checktel-right" id="getCode">获取验证码</p>
+		<p class="tips tips5" id="yzm-msg"><!-- 验证码为必填项 --></p>
+
+		<!-- 密码 -->
+		<div class="paswd">
+			<label> <i class="icon iconfont icon-mima"></i></label>
+			<input type="text" id="paswd" placeholder="请输入密码">
+		</div>
+		<p class="tips tips3" id="paswd-msg"><!-- 登陆密码必须填写 --></p>
+		<!-- 确认密码 -->
+		<div class="rpaswd">
+			<label> <i class="icon iconfont icon-mima"></i></label>
+			<input id="rpaswd" type="text" placeholder="请再次输入密码">
+		</div>
+		<p class="tips tips4" id="rpaswd-msg"><!-- 确认密码必须填写 --></p>
+		<!-- 底部的同意按钮 -->
+		<div class="conform">
+			<input type="button" class="sub" value="同意协议并提交">
+		</div>
+		<!-- 底部的服务协议 -->
+		<div class="sube">
+			<span class="one1">已注册？</span>
+			<span class="one2"><a href="login.html">立即登陆</a></span>
+			<span class="one3">注册即同意</span>
+			<span class="one4">《伟达金云桥使用协议》</span>
+		</div>
+	</div>
+</body>
+<script>
+	$(function(){
+		var aa = false;
+		var bb = false;
+		var cc = false;
+		var dd = false;
+		// 手机号只能由数字组成，长度为11位
+		var reg=/^1\d{10}$/;
+		$("#phone").focus(function(){
+			$(".phone").css("border"," 1px solid purple");
+			$(".tips1").html("");
+			$(".tips5").html("");
+			$(".tips3").html("");
+			$(".tips4").html("");
+			$('#yzm').val("");
+			$('#paswd').val("");
+			$('#rpaswd').val("");
+		}).blur(function(){
+			$(".phone").css("border"," 1px solid #ddd");
+			if($("#phone").val()==""){
+				$(".tips1").html("帐号不能为空");
+				$(".tips1").css("color","red");
+				aa=false;
+			}else if(!reg.test($("#phone").val())){
+				$(".tips1").text("帐号只能由数字组成，长度为11位");
+				$(".tips1").css("color","red");
+				aa=false;
+			}else if( localStorage.getItem( $("#phone").val() ) ){
+				$(".tips1").text("已经被注册");
+				$(".tips1").css("color","red");
+				aa=false;
+			}else{
+				$(".tips1").html("帐号设置正确");
+				$(".tips1").css("color","green");
+				aa=true;
+			}
+		});
+		// 获取验证
+		$('#getCode').click(function  () {
+			var str = '159984456489764598564945489965656958954159984456489764598564945';
+			var n = 4;
+			var codes = '';
+			for( var i = 0 ; i< n ; i++){
+				var num = Math.floor( Math.random() * 63 );
+				// codes += str.charAt( num );
+				codes += str[num];
+			}
+			$('#getCode').html( codes );
+		})
+		//验证比较
+		$('#yzm').blur(function(){
+			$(".checktel").css("border"," 1px solid #ddd");
+			if( $('#yzm').val() == ""){
+				$("#yzm-msg").html("请输入验证码");
+				$(".tips5").css("color","red");
+				dd = false;
+			}else if( $('#yzm').val() != $('#getCode').html() ){
+				$("#yzm-msg").html("验证码不正确");
+				$(".tips5").css("color","red");
+				dd = false;
+			}else{
+				$("#yzm-msg").html("验证码正确");
+				$(".tips5").css("color","green");
+				dd = true;
+			}
+		}).focus(function(){
+			    $(".checktel").css("border"," 1px solid purple");
+				$("#yzm-msg").html("")
+
+		})
+		//密码只能由数字组成，长度为8位
+		var reg2=/[0-9a-z]{8}/i;
+		$("#paswd").focus(function(){
+			$(".paswd").css("border"," 1px solid purple");
+			$(".tips3").html("");
+			$("#rpaswd").val("");
+			$(".tips4").text("");
+		}).blur(function(){
+			$(".paswd").css("border"," 1px solid #ddd");
+			if($("#paswd").val()==""){
+				$(".tips3").html("密码不能为空");
+				$(".tips3").css("color","red");
+				bb=false;
+			}else if(!reg2.test($("#paswd").val())){
+				$(".tips3").text("密码只能由数字字母组成，长度不可8位");
+				$(".tips3").css("color","red");
+				bb=false;
+			}
+			// else if($("#rpaswd").val()!=$("#paswd").val()){
+			// 	$(".tips3").text("密码需相同，长度不可8位");
+			// 	$(".tips3").css("color","red");
+			// 	bb=false;
+			// }
+			else{
+				$(".tips3").html("密码设置正确");
+				$(".tips3").css("color","green");
+				bb=true;
+			}
+		});
+		//确认密码
+		$("#rpaswd").focus(function(){
+			$(".rpaswd").css("border","1px solid purple");
+			$(".tips4").html("");
+		}).blur(function(){
+			$(".rpaswd").css("border"," 1px solid #ddd");
+			if($("#rpaswd").val()===""){
+				$(".tips4").html("密码不能为空");
+				$(".tips4").css("color","red");
+				cc=false;
+			}else if($("#rpaswd").val()!=$("#paswd").val()){
+				$(".tips4").text("密码要相同");
+				$(".tips4").css("color","red");
+				cc=false;
+			}else{
+				$(".tips4").html("密码设置正确");
+				$(".tips4").css("color","green");
+				cc=true;
+			}
+		});
+
+		$(".sub").click(function(){
+			if( aa && bb && cc && dd){
+				localStorage.setItem($("#phone").val(),$("#paswd").val());
+				swal("正确","注册成功请登录","success");
+			}else{
+				swal("错误","请重新注册","error");
+			}
+
+		});
+
+
+
+		
+	});
+	
+
+			
+			
+		
+</script>
+</html>

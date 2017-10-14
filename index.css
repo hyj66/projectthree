@@ -1,0 +1,202 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color:#000;
+    margin: 0;
+    padding: 0;
+}
+html{
+        min-width: 1500px;
+
+    }
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide {
+   
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.swiper-slide img{
+    width: 100%;
+    height: 100%;
+}
+/* header */
+.head{
+   /*  display:fixed; */
+    width: 100%;
+    height: 50px;
+    background: #5f5c55;
+}
+.head .content{
+    width: 100%;
+    height: 50px;
+    /* border: 1px solid #000; */
+    margin:0 auto;
+    display:flex;
+}
+.head .content-left{
+    /* border: 1px solid #000; */
+    width: 50px;
+    height: 150px;
+    flex:2;
+}
+.head .content-left img{
+    width: 150px;
+    height: 50px;
+    margin-left: 10px;
+}
+.head .content-center{
+   /*  border: 1px solid #000; */
+    width: 650px;
+    height: 150px;
+    flex:5;
+}
+.head .content-right{
+
+  /*   border: 1px solid #000; */
+    width: 50px;
+    height: 50px;
+    flex:2;
+    position: relative;
+}
+.head .content-right .welcom{
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    left: 15px;
+}
+.head .content-right .exit{
+    /* border: 1px solid #000; */
+    width: 230px;
+    height: 48px;
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    left: 35px;
+    display: none;
+    color:#fcf7d1;
+}
+.head .content-right .logintop{
+    display: inline-block;
+    width: 50px;
+    height: 48px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    margin-left:50px;
+    position: absolute;
+    left: 10px;
+
+}
+.head .content-right .logintop a{
+    color: red;
+}
+.head .content-right .registtop{
+    display: inline-block;
+    width: 50px;
+    height: 48px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    margin-left:50px;
+    position: absolute;
+    left: 42px;
+}
+.head .content-right .registtop a{
+    color: red;
+}
+.head .content-right img{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    vertical-align: middle;
+    margin-top: 5px;
+}
+.head .content-right .huan{
+    position: absolute;
+    top: 15px;
+    left: 45px;
+}
+.head .content-right .zhang{
+    position: absolute;
+    top: 15px;
+    left: 78px;
+}
+.head .content-right .tui{
+    position: absolute;
+    top: 15px;
+    left: 170px;
+}
+.head .content-center ul{
+    list-style: none;
+    display: flex;
+    width: 500px;
+    margin-left: 300px;
+    justify-content: space-around;
+
+}
+.head .content-center ul li{
+    width: 90px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+}
+.swiper-slide{
+     position: relative;
+}
+.swiper-slide .hand{
+   /* border: 1px solid #000;*/
+    width: 34%;
+    height:48%;
+    position: absolute;
+    left:0px;
+    bottom:50px;
+}
+.swiper-slide .table{
+   /* border: 1px solid #000;*/
+    width: 50%;
+    height:48%;
+    /*margin-left:10px;*/
+    position: absolute;
+    right:0px;
+     bottom:50px;
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <!-- Link Swiper's CSS -->
+   <script src="js/jquery-1.7.min.js"></script>
+    <link rel="shortcut icon" href="imgs/favicon.ico">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <script src="js/swiper.animate1.0.2.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/common.css">
+    
+    <script src="js/swiper.min.js"></script>
+
+    <!-- Demo styles -->
+   </head> 
+<body>
+    <div class="head">
+        <div class="content">
+            <div class="content-left">
+                <img src="imgs/nav-logo.png">
+            </div>
+            <div class="content-center">
+                <ul>
+                    <li>优先认购</li>
+                    <li>我要投资</li>
+                    <li>我要转让</li>
+                    <li>我要供票</li>
+                    <li>我的云桥</li>
+                    <li>帮助中心</li>
+                </ul>
+            </div>
+            <div class="content-right">
+                <img src="imgs/user.png" height="64" width="64">
+                <div class="welcom">
+                <span class="logintop">
+                    <a href="login.html">登录/</a>
+                </span>
+                <span class="registtop">
+                    <a href="register.html">注册</a>
+                </span>
+                </div>
+                <div class="exit">
+                <!-- 欢迎 -->
+                 <span class="huan">
+                    欢迎
+                </span>
+                <!-- 账号展示 -->
+                 <span class="zhang">
+                    00000
+                </span>
+                 <!-- 退出 -->
+                <span class="tui">
+                   退出
+                </span>
+                </div>
+
+            </div><!-- 右侧结束 -->
+        </div><!-- 中间结束 -->
+    </div><!-- 头部结束 -->
+
+    <!-- 头部 结束-->
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <video src="video/banner.mp4" autoplay loop="loop"></video>
+            </div>
+            <div class="swiper-slide">
+                <img src="imgs/2.jpg" >
+
+               
+                <img src="imgs/quxian.png" class="hand ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.3s">
+        
+                
+                <img src="imgs/table.png" class="table ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="0.3s">
+              
+            </div>
+            <div class="swiper-slide">
+                <img src="imgs/3.jpg" >
+            </div>
+            <div class="swiper-slide">
+                 <img src="imgs/4.jpg" >
+            </div>
+            <div class="swiper-slide">
+                 <img src="imgs/5.jpg" >
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="js/swiper.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        $(function(){
+            var swiper = new Swiper('.swiper-container', {
+                pagination: '.swiper-pagination',//轮播图
+                paginationClickable: true,
+                direction: 'vertical',
+                // loop:true,
+                onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+                    swiperAnimateCache(swiper); //隐藏动画元素 
+                    swiperAnimate(swiper); //初始化完成开始动画
+                }, 
+                onSlideChangeEnd: function(swiper){ 
+                
+                    swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+                    $(".head").slideDown(500);
+                },
+                onSlideChangeStart: function(swiper){ 
+                
+                    swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+                    $(".head").slideUp(500);
+                } 
+            });  
+            //   159                        key
+            var good=localStorage.getItem("good");
+            if( good ){
+                $(".zhang").html("亲爱的用户");
+                 // $(".zhang").html(good);这个是显示帐号（手机号）
+                $(".exit").css("display","block");
+                $(".welcom").css("display","none");
+            }else{
+                $(".exit").css("display","none");
+                $(".welcom").css("display","block");
+            };
+            $(".exit").click(function(){
+                // window.location.href="login.html";
+                $(".exit").css("display","none");
+                $(".welcom").css("display","block");
+            });
+
+        });
+
+       
+    
+    </script>
+</body>
+</html>
